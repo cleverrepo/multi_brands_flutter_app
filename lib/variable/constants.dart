@@ -1,0 +1,20 @@
+import 'package:flutter/animation.dart';
+import 'package:flutter/material.dart';
+
+const double fontsize=14;
+const arbitraryColor=Colors.purple;
+const constantColor=Colors.deepOrange;
+const double containerheith=300;
+const double containerwidth=280;
+const fontWeight=FontWeight.bold;
+const  mainColor=Colors.black;
+const subColor=Colors.white;
+const double primaryheight=45;
+const double customHeight=50;
+const double customWidth=300;
+const double primaryWidth=80;
+const double secondaryHeight=30;
+const  double secondaryWidth=30;
+const double iconsize=25;
+const transparent=Colors.transparent;
+const generalColor=Colors.blue;

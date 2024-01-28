@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "196792990794",
+    "firebase_url": "https://store-13b1c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "store-13b1c",
+    "storage_bucket": "store-13b1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196792990794:android:8d163ca1cfdfac99857ab3",
+        "android_client_info": {
+          "package_name": "com.example.onlineshes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8EhVRayvjqC9QeIFQErn-J9W9XgLe3cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
