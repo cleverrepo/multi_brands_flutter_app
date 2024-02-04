@@ -1,4 +1,5 @@
 class DataModel {
+  late String? userId;
   late String productImage;
   late String productName;
   late double productPrice;
@@ -6,6 +7,7 @@ class DataModel {
   List<String> subImages;
 
   DataModel({
+    this.userId,
     required this.subImages,
     required this.productImage,
     required this.productName,
@@ -13,14 +15,7 @@ class DataModel {
     this.quantity = 1,
     required double? rating,
   });
-  Map<String, dynamic> toMap() {
-    return {
-      'productName': productName,
-      'productImage': productImage,
-      'productPrice': productPrice,
-      'quantity': quantity,
-    };
-  }
+
 
   static List<DataModel> skecher = [
     DataModel(

@@ -74,8 +74,11 @@ class _AdidasState extends State<Adidas> {
                               borderRadius: BorderRadius.circular(18)),
                           child: Stack(
                             children: [
-                              Image.asset(DataModel.adidas[index].productImage, width: 150,
-                                height: 200,),
+                              Hero(
+                                tag:DataModel.adidas[index],
+                                child: Image.asset(DataModel.adidas[index].productImage, width: 150,
+                                  height: 200,),
+                              ),
 
                               Positioned(
                                 top: 180,

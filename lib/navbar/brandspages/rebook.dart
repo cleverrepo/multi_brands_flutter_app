@@ -73,7 +73,9 @@ class _RebokState extends State<Rebok> {
                               borderRadius: BorderRadius.circular(18)),
                           child: Stack(
                             children: [
-                              Image.asset(DataModel.rebok[index].productImage),
+                              Hero(
+                                  tag:DataModel.rebok[index],
+                                  child: Image.asset(DataModel.rebok[index].productImage)),
 
                               Positioned(
                                 top: 180,

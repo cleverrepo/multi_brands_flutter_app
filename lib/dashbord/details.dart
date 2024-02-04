@@ -87,10 +87,13 @@ class _DetailsState extends State<Details> {
                                 : widget.datamodel.productImage;
                       });
                     },
-                    child: Image.asset(
-                      currentImage,
-                      width: 320,
-                      height: 200,
+                    child: Hero(
+                      tag: widget.datamodel.productImage,
+                      child: Image.asset(
+                        currentImage,
+                        width: 320,
+                        height: 200,
+                      ),
                     ),
                   ),
                 ),

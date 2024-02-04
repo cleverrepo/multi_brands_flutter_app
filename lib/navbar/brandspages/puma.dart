@@ -75,8 +75,11 @@ bool list=false;
                               borderRadius: BorderRadius.circular(18)),
                           child: Stack(
                             children: [
-                              Image.asset(DataModel.puma[index].productImage, width: 150,
-                                height: 200,),
+                              Hero(
+                                tag:DataModel.puma[index],
+                                child: Image.asset(DataModel.puma[index].productImage, width: 150,
+                                  height: 200,),
+                              ),
 
                               Positioned(
                                 top: 180,

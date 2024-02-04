@@ -67,7 +67,9 @@ class _FilaState extends State<Fila> {
                               borderRadius: BorderRadius.circular(18)),
                           child: Stack(
                             children: [
-                              Image.asset(DataModel.fila[index].productImage),
+                              Hero(
+                                  tag:DataModel.fila[index],
+                                  child: Image.asset(DataModel.fila[index].productImage)),
                               Positioned(
                                 top: 180,
                                 left: 80,

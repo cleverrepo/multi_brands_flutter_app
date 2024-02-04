@@ -46,8 +46,7 @@ class _SkechersState extends State<Skechers> {
                                   () => Details(
                                         datamodel: DataModel.skecher[index],
                                       ),
-                                  transition: Transition.circularReveal,
-                                  duration: const Duration(milliseconds: 500));
+                                );
                             },
                             child: Container(
                               width: 100,
@@ -75,10 +74,15 @@ class _SkechersState extends State<Skechers> {
                                   borderRadius: BorderRadius.circular(18)),
                               child: Stack(
                                 children: [
-                                  Image.asset(
-                                    DataModel.skecher[index].productImage,
-                                    width: 150,
-                                    height: 200,
+                                  Hero(
+                                    transitionOnUserGestures: true,
+
+                                    tag:  DataModel.skecher[index],
+                                    child: Image.asset(
+                                      DataModel.skecher[index].productImage,
+                                      width: 150,
+                                      height: 200,
+                                    ),
                                   ),
                                   Positioned(
                                     top: 190,

@@ -73,7 +73,9 @@ class _NikeState extends State<Nike> {
                               borderRadius: BorderRadius.circular(18)),
                           child: Stack(
                             children: [
-                              Image.asset(DataModel.nike[index].productImage),
+                              Hero(
+                                  tag:DataModel.nike[index],
+                                  child: Image.asset(DataModel.nike[index].productImage)),
 
                               Positioned(
                                 top: 180,

@@ -73,7 +73,9 @@ class _NewBalanceState extends State<NewBalance> {
                               borderRadius: BorderRadius.circular(18)),
                           child: Stack(
                             children: [
-                              Image.asset(DataModel.newbalance[index].productImage),
+                              Hero(
+                       tag:   DataModel.newbalance[index],
+                                  child: Image.asset(DataModel.newbalance[index].productImage)),
 
                               Positioned(
                                 top: 180,

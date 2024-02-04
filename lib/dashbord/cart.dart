@@ -342,8 +342,7 @@ class _CartState extends State<Cart> {
                                           const Gap(10),
                                           ElevatedButton(
                                             onPressed: () async {
-
-                                            },
+  },
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
                                                     Colors.deepPurple,
