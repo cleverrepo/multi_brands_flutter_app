@@ -44,10 +44,11 @@ android {
 
     defaultConfig {
         applicationId "com.example.onlineshes"
-        minSdkVersion 20
+        minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -62,6 +63,7 @@ flutter {
 }
 
 dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
     implementation platform("com.google.firebase:firebase-bom:32.6.0")
     implementation "com.google.firebase:firebase-analytics"
     implementation "com.google.firebase:firebase-auth"  // Add this line for Firebase Authentication

@@ -1,269 +1,92 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:onlineshes/Statemangemant/stateprovider.dart';
+import 'package:onlineshes/navbar/brandspages/adidas.dart';
+import 'package:onlineshes/navbar/brandspages/fila.dart';
+import 'package:onlineshes/navbar/brandspages/new_balance.dart';
 import 'package:onlineshes/navbar/brandspages/nike.dart';
-import 'package:onlineshes/navbar/brandspages/skechers.dart';
-import 'package:onlineshes/variable/constants.dart';
-import 'package:provider/provider.dart';
+import 'package:onlineshes/navbar/brandspages/preview.dart';
+import 'package:onlineshes/navbar/brandspages/rebook.dart';
 
-import '../Statemangemant/themeprovider.dart';
-import '../UserAuth/login.dart';
-import '../navbar/brandspages/adidas.dart';
-import '../navbar/brandspages/fila.dart';
-import '../navbar/brandspages/new_balance.dart';
-import '../navbar/brandspages/puma.dart';
-import '../navbar/brandspages/rebook.dart';
+import '../variable/variables.dart';
 
-class Categories extends StatefulWidget {
-  const Categories({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<Categories> createState() => _CategoriesState();
+  State<Home> createState() => _HomeState();
 }
 
-List brandPages = [
-  // const All(),
-  const Puma(),
-  const Skechers(),
+List categories = [
+  const Preview(),
   const Adidas(),
-  const Nike(),
   const Fila(),
-  const Rebok(),
   const NewBalance(),
-];
-
-List<String> brandNames = [
-  "All",
-  "Puma",
-  "Adidas",
-  "Fila",
-  "Rebook",
-  "NewBal",
-  "Nike"
+  const Rebok(),
+  const Nike(),
 ];
 int currentPage = 0;
-int selecetedTab = -1;
-bool iconClicked = false;
-final GlobalKey<SliderDrawerState> _sliderDrawerKey =
-    GlobalKey<SliderDrawerState>();
-FirebaseAuth auth=FirebaseAuth.instance;
-class _CategoriesState extends State<Categories> {
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    final themeprovider = Provider.of<ThemeProvider>(context);
     return SafeArea(
-        child: DefaultTabController(
-            length: brandPages.length,
-            child: Scaffold(
-              backgroundColor: themeprovider.darktheme
-                  ? const Color.fromARGB(255, 24, 24, 24)
-                  : Colors.white,
-              body: SliderDrawer(
-                animationDuration: 500,
-                slideDirection: SlideDirection.LEFT_TO_RIGHT,
-                key: _sliderDrawerKey,
-                appBar: SliderAppBar(
-                  trailing: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Badge(
-                        label: Consumer<ProviderManagement>(
-                          builder: (BuildContext context,
-                              ProviderManagement value, Widget? child) {
-                            return Text("${value.x}");
-                          },
-                        ),
-                        child: const Icon(Icons.notifications)),
-                  ),
-                  appBarHeight: 50,
-                  title: const Text(
-                    "Walk Faster",
-                    style: TextStyle(fontSize: 18, color: Colors.deepPurple),
-                    textAlign: TextAlign.start,
-                  ),
+      child: DefaultTabController(
+        length: categories.length,
+        initialIndex: 0,
+        child: Scaffold(
+            body: Column(
+          children: [
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                height: 250,
+                decoration: const BoxDecoration(
+                    color: textColor,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(20),
+                    )),
+                child: Stack(
+                  children: [
+                    Positioned(
+                        left: 300,
+                        top: 25,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.card_travel),
+                        )),
+                    Positioned(
+                        left: 260,
+                        top: 25,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.search),
+                        )),
+                    Positioned(
+                      top: 55,
+                      left: 25,
+                      child: Container(
+                        width: 240,
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(25)),
+                      ),
+                    )
+                  ],
                 ),
-                slider: Container(
-                  color: themeprovider.darktheme
-                      ? const Color.fromARGB(255, 24, 24, 24)
-                      : Colors.white,
-                  child: ListView(children: [
-                     DrawerHeader(
-                        child: Column(children: [
-                      CircleAvatar(
-                        radius: 40,
-
-                      ),
-                          Text(
-                            "${auth.currentUser!.email}",
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
-                          ),
-                    ])),
-                    ListTile(
-                      trailing: Switch(
-                        value: Provider.of<ThemeProvider>(context).darkTheme,
-                        onChanged: (val) {
-                          Provider.of<ThemeProvider>(context, listen: false)
-                              .toggledTheme();
-                        },
-                      ),
-                      title: const Text(
-                        "Dark Mode",
-                        style: TextStyle(
-                            fontWeight: fontWeight, fontSize: fontsize),
-                      ),
-                    ),
-                    ListTile(
-                      onTap: () {},
-                      title: Text(
-                        "Account",
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          color: themeprovider.darktheme
-                              ? Colors.white
-                              : Colors.black,
-                        ),
-                      ),
-                      trailing: const Icon(
-                        Icons.person_outline,
-                        size: 25,
-                        color: Colors.deepPurple,
-                      ),
-                    ),
-                    ListTile(
-                      onTap: () {},
-                      title: Text(
-                        " Notifications",
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          color: themeprovider.darktheme
-                              ? Colors.white
-                              : Colors.black,
-                        ),
-                      ),
-                      trailing: const Icon(
-                        Icons.notifications,
-                        size: 25,
-                        color: Colors.deepPurple,
-                      ),
-                    ),
-                    ListTile(
-                      onTap: () {},
-                      title: Text(
-                        "Order tracking ",
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          color: themeprovider.darktheme
-                              ? Colors.white
-                              : Colors.black,
-                        ),
-                      ),
-                      trailing: const Icon(
-                        Icons.car_crash_outlined,
-                        size: 25,
-                        color: Colors.deepPurple,
-                      ),
-                    ),
-                    ListTile(
-                      onTap: () {},
-                      title: Text(
-                        "Orders ",
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          color: themeprovider.darktheme
-                              ? Colors.white
-                              : Colors.black,
-                        ),
-                      ),
-                      trailing: const Icon(
-                        Icons.add_shopping_cart,
-                        size: 25,
-                        color: Colors.deepPurple,
-                      ),
-                    ),
-                    ListTile(
-                      onTap: () {},
-                      trailing: const Icon(
-                        Icons.headset_mic_outlined,
-                        size: 35,
-                        color: Colors.deepPurple,
-                      ),
-                      title: Text(
-                        " support ",
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          color: themeprovider.darktheme
-                              ? Colors.white
-                              : Colors.black,
-                        ),
-                      ),
-                    ),
-                    ListTile(
-                      onTap: () {},
-                      title: Text(
-                        "Privacy Policy ",
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          color: themeprovider.darktheme
-                              ? Colors.white
-                              : Colors.black,
-                        ),
-                      ),
-                      trailing: const Icon(
-                        Icons.privacy_tip_outlined,
-                        size: 25,
-                        color: Colors.deepPurple,
-                      ),
-                    ),
-                    ListTile(
-                      onTap: () {
-                        FirebaseAuth.instance
-                            .signOut()
-                            .then((value) => Get.to(() => const Login()));
-                      },
-                      trailing: const Icon(
-                        Icons.logout,
-                        size: 25,
-                        color: Colors.deepPurple,
-                      ),
-                      title: const Text(
-                        "Sign out",
-                        style: TextStyle(
-                            fontWeight: fontWeight, fontSize: fontsize),
-                      ),
-                    ),
-                  ]),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      SizedBox(
-                        height: 50,
-                        width: 300,
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                              suffixIcon: Icon(
-                                Icons.search,
-                                color: Colors.deepPurple,
-                                size: 25,
-                              ),
-                              hintText: "Search",
-                              hintStyle: TextStyle(
-                                  fontSize: 18, color: Colors.deepPurple),
-                              border: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  width:1,color: Colors.deepPurple
-                                )
-                              )),
-                        ),
-                      ),
-                      TabBar(
+              ),
+            ),
+            Expanded(
+                flex: 2,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: 70,
+                      child: TabBar(
+                          indicator: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: textColor),
                           automaticIndicatorColorAdjustment: false,
                           isScrollable: true,
                           dividerColor: Colors.grey,
@@ -276,58 +99,51 @@ class _CategoriesState extends State<Categories> {
                               fontSize: 16, color: Colors.deepPurple),
                           unselectedLabelColor: Colors.grey[900],
                           unselectedLabelStyle: const TextStyle(
-                            fontSize: fontsize,
-                          ),
+                              fontSize: fontsSize, fontFamily: 'Gumela'),
                           onTap: (pageValue) {
                             setState(() {
                               currentPage = pageValue;
                             });
                           },
                           tabs: const [
-
                             Tab(
-                              text: " Sketcers",
+                              text: " Preview",
                             ),
                             Tab(
-                              text: "puma",
-                            ),
-
-                            Tab(
-                              text: "Adidas",
+                              text: " Fashion",
                             ),
                             Tab(
-                              text: "Rebok",
-                            ),
-
-                            Tab(
-                              text: "Nike ",
+                              text: "Sport",
                             ),
                             Tab(
-                              text: " Fila",
+                              text: "home & kitchen",
                             ),
                             Tab(
-                              text: " new Balance",
+                              text: "Beauty",
+                            ),
+                            Tab(
+                              text: "Electronics",
                             ),
                           ]),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.58,
-                          width: double.infinity,
-                          child: const TabBarView(
-                            children: [
-                              Skechers(),
-                              Puma(),
-                              Adidas(),
-                               Rebok(),
-                               Nike(),
-                              Fila(),
-
-                              NewBalance(),
-                            ],
-                          )),
-                    ],
-                  ),
-                ),
-              ),
-            )));
+                    ),
+                    SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.45,
+                        width: double.infinity,
+                        child: const TabBarView(
+                          children: [
+                            Preview(),
+                            Adidas(),
+                            Fila(),
+                            NewBalance(),
+                            Rebok(),
+                            Nike(),
+                          ],
+                        )),
+                  ],
+                ))
+          ],
+        )),
+      ),
+    );
   }
 }

@@ -16,7 +16,6 @@ class DataModel {
     required double? rating,
   });
 
-
   static List<DataModel> skecher = [
     DataModel(
         productImage: "Assets/skechers/sub/a2.png",
@@ -227,7 +226,6 @@ class DataModel {
         productName: "Skecher",
         productPrice: 380,
         rating: 3.1),
-
     DataModel(
         subImages: [
           "Assets/skechers/sub/y1.png",
@@ -442,7 +440,6 @@ class DataModel {
     DataModel(
         subImages: [
           "Assets/pumabrand/pum/k5.png",
-
           "Assets/pumabrand/pum/k7.png",
           "Assets/pumabrand/pum/k8.png",
         ],
@@ -1015,7 +1012,6 @@ class DataModel {
         productName: "Nike",
         productPrice: 385,
         rating: 4.2),
-
   ];
   static List<DataModel> rebok = [
     DataModel(
@@ -1814,5 +1810,256 @@ class DataModel {
         productName: "Fila",
         productPrice: 270,
         rating: 5.3),
+  ];
+
+  static List<DataModel> beauty = [
+    DataModel(
+        productImage: " Assets/images/beauty/arti.png",
+        productName: "Ipsum",
+        productPrice: 171.8,
+        rating: 2.7,
+        subImages: []),
+    DataModel(
+        productImage: " Assets/images/beauty/kit.png",
+        productName: "Ipsum",
+        productPrice: 180.1,
+        rating: 5.3,
+        subImages: []),
+    DataModel(
+        productImage: " Assets/images/beauty/love",
+        productName: "Ipsum ",
+        productPrice: 84.9,
+        subImages: [],
+        rating: 5.8),
+    DataModel(
+        productImage: " Assets/images/beauty/oil.png",
+        productName: "psum ",
+        productPrice: 89.0,
+        subImages: [],
+        rating: 3.5),
+    DataModel(
+        productImage: " Assets/images/beauty/perf.png",
+        productName: "Ipsum",
+        productPrice: 247.4,
+        subImages: [],
+        rating: 4.6),
+    DataModel(
+        productImage: " Assets/images/beauty/sham.png",
+        productName: "Ipsum",
+        productPrice: 120.2,
+        subImages: [],
+        rating: 4.5),
+    DataModel(
+        productImage: " Assets/images/beauty/syrup.png",
+        productName: "Ipsum ",
+        productPrice: 92.0,
+        subImages: [],
+        rating: 3.0),
+    DataModel(
+        productImage: " Assets/images/beauty/wax.png",
+        productName: "Ipsum",
+        productPrice: 112.7,
+        subImages: [],
+        rating: 2.8),
+  ];
+  static List<DataModel> electronics = [
+    DataModel(
+        productImage: "Assets/images/electronics/camera.png",
+        productName: "Lorem",
+        productPrice: 202.7,
+        subImages: [],
+        rating: 1.5),
+    DataModel(
+        productImage: "Assets/images/electronics/head.png",
+        productName: "Lorem",
+        productPrice: 191.5,
+        subImages: [],
+        rating: 2.1),
+    DataModel(
+        productImage: "Assets/images/electronics/iphone.png",
+        productName: "Lorem",
+        productPrice: 297.7,
+        subImages: [],
+        rating: 3.3),
+    DataModel(
+        productImage: "Assets/images/electronics/laptop.png",
+        productName: "Lorem",
+        productPrice: 206.0,
+        subImages: [],
+        rating: 2.2),
+    DataModel(
+        productImage: "Assets/images/electronics/mac.png",
+        productName: "Lorem",
+        productPrice: 191.3,
+        subImages: [],
+        rating: 3.5),
+    DataModel(
+        productImage: "Assets/images/electronics/samsung.png",
+        productName: "Lorem",
+        productPrice: 229.1,
+        subImages: [],
+        rating: 1.4),
+    DataModel(
+        productImage: "Assets/images/electronics/tv.png",
+        productName: "Lorem",
+        productPrice: 187.5,
+        subImages: [],
+        rating: 2.6),
+    DataModel(
+        productImage: "Assets/images/electronics/tab.png",
+        productName: "Lorem",
+        productPrice: 280.2,
+        subImages: [],
+        rating: 1.2),
+  ];
+  static List<DataModel> home_kitchen = [
+    DataModel(
+        productImage: "Assets/images/home_kitchen/bad.png",
+        productName: "simply",
+        productPrice: 259.1,
+        subImages: [],
+        rating: 6.0),
+    DataModel(
+        productImage: "Assets/images/home_kitchen/bath.png",
+        productName: "simply",
+        productPrice: 261.4,
+        subImages: [],
+        rating: 4.1),
+    DataModel(
+        productImage: "Assets/images/home_kitchen/dinner.png",
+        productName: "simply",
+        productPrice: 327.6,
+        subImages: [],
+        rating: 2.2),
+    DataModel(
+        productImage: "Assets/images/home_kitchen/gas.png",
+        productName: "simply",
+        productPrice: 298.9,
+        subImages: [],
+        rating: 4.9),
+    DataModel(
+        productImage: "Assets/images/home_kitchen/kit.png",
+        productName: "simply",
+        productPrice: 345.0,
+        subImages: [],
+        rating: 4.8),
+    DataModel(
+        productImage: "Assets/images/home_kitchen/lamp.png",
+        productName: "simply",
+        productPrice: 264.7,
+        subImages: [],
+        rating: 2.8),
+    DataModel(
+        productImage: "Assets/images/home_kitchen/table.png",
+        productName: "simply",
+        productPrice: 363.0,
+        subImages: [],
+        rating: 5.3),
+    DataModel(
+        productImage: "Assets/images/home_kitchen/duvet.png",
+        productName: "simply",
+        productPrice: 221.2,
+        subImages: [],
+        rating: 3.5),
+  ];
+  static List<DataModel> fashion = [
+    DataModel(
+        productImage: "Assets/images/fashion/cat.png",
+        productName: "text ",
+        productPrice: 249.1,
+        subImages: [],
+        rating: 4.7),
+    DataModel(
+        productImage: "Assets/images/fashion/jacket.png",
+        productName: "text ",
+        productPrice: 271.6,
+        subImages: [],
+        rating: 3.3),
+    DataModel(
+        productImage: "Assets/images/fashion/long.png",
+        productName: "text ",
+        productPrice: 262.9,
+        subImages: [],
+        rating: 4.8),
+    DataModel(
+        productImage: "Assets/images/fashion/neck.png",
+        productName: "text ",
+        productPrice: 320.8,
+        subImages: [],
+        rating: 3.9),
+    DataModel(
+        productImage: "Assets/images/fashion/short.png",
+        productName: "text ",
+        productPrice: 207.1,
+        subImages: [],
+        rating: 5.8),
+    DataModel(
+        productImage: "Assets/images/fashion/trau.png",
+        productName: "text ",
+        productPrice: 358.2,
+        subImages: [],
+        rating: 4.5),
+    DataModel(
+        productImage: "Assets/images/fashion/up.png",
+        productName: "text ",
+        productPrice: 379.9,
+        subImages: [],
+        rating: 4.1),
+    DataModel(
+        productImage: "Assets/images/fashion/shirt.png",
+        productName: "text ",
+        productPrice: 275.3,
+        subImages: [],
+        rating: 4.9),
+  ];
+  static List<DataModel> sport = [
+    DataModel(
+        productImage: "Assets/images/sports/bike.png",
+        productName: "printing",
+        productPrice: 282.0,
+        subImages: [],
+        rating: 5.0),
+    DataModel(
+        productImage: "Assets/images/sports/glove.png",
+        productName: "printing",
+        productPrice: 296.9,
+        subImages: [],
+        rating: 5.8),
+    DataModel(
+        productImage: "Assets/images/sports/pro.png",
+        productName: "printing",
+        productPrice: 379.3,
+        subImages: [],
+        rating: 3.9),
+    DataModel(
+        productImage: "Assets/images/sports/shoe.png",
+        productName: "printing",
+        productPrice: 297.4,
+        subImages: [],
+        rating: 3.6),
+    DataModel(
+        productImage: "Assets/images/sports/skate.png",
+        productName: "printing",
+        productPrice: 330.0,
+        subImages: [],
+        rating: 5.2),
+    DataModel(
+        productImage: "Assets/images/sports/sportbike.png",
+        productName: "printing",
+        productPrice: 270.0,
+        rating: 3.1,
+        subImages: []),
+    DataModel(
+        productImage: "Assets/images/sports/track.png",
+        productName: "printing",
+        productPrice: 345.6,
+        subImages: [],
+        rating: 4.4),
+    DataModel(
+        productImage: "Assets/images/sports/sing.png",
+        productName: "printing",
+        productPrice: 324.3,
+        rating: 6.0,
+        subImages: []),
   ];
 }

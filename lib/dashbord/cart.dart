@@ -1,8 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:onlineshes/UserAuth/firebasecollection.dart';
+
 import 'package:onlineshes/homepage/home.dart';
 
 import 'package:onlineshes/variable/DataModel.dart';
@@ -13,8 +11,6 @@ import '../Statemangemant/themeprovider.dart';
 import '../variable/constants.dart';
 
 class Cart extends StatefulWidget {
-
-
   @override
   State<Cart> createState() => _CartState();
 }
@@ -27,8 +23,6 @@ class _CartState extends State<Cart> {
     final provider = Provider.of<ProviderManagement>(context);
     final themeprovider = Provider.of<ThemeProvider>(context);
     double totalPrice = Provider.of<ProviderManagement>(context).getTotal();
-    CollectionReference collectionReference =
-        FirebaseFirestore.instance.collection("store");
 
     return Scaffold(
       backgroundColor: themeprovider.darktheme
@@ -247,7 +241,7 @@ class _CartState extends State<Cart> {
                                                 MaterialPageRoute(
                                                     builder: (BuildContext
                                                             context) =>
-                                                        Home()));
+                                                        const NavBar()));
                                           },
                                           child: const Text("done")),
                                     ],
@@ -341,8 +335,7 @@ class _CartState extends State<Cart> {
                                           ),
                                           const Gap(10),
                                           ElevatedButton(
-                                            onPressed: () async {
-  },
+                                            onPressed: () async {},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
                                                     Colors.deepPurple,

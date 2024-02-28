@@ -4,10 +4,10 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:onlineshes/Statemangemant/stateprovider.dart';
 import 'package:onlineshes/Statemangemant/themeprovider.dart';
-import 'package:onlineshes/homepage/home.dart';
 import 'package:onlineshes/variable/constants.dart';
 import 'package:provider/provider.dart';
 
+import '../homepage/home.dart';
 import '../variable/DataModel.dart';
 
 class Details extends StatefulWidget {
@@ -113,7 +113,6 @@ class _DetailsState extends State<Details> {
                               setState(() {
                                 currentImage = sub;
                               });
-
                             },
                             child: Image.asset(
                               sub,
@@ -337,7 +336,7 @@ class _DetailsState extends State<Details> {
                             Get.snackbar("Success", "Item added to the cart",
                                 snackPosition: SnackPosition.TOP);
                             Future.delayed(const Duration(seconds: 1), () {
-                              Get.to(() => const Home());
+                              Get.to(() => const NavBar());
                             });
                           },
                           child: Container(
